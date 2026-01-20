@@ -28,6 +28,12 @@
 
         <div class="cards">
 
+            <% if(data.length==0){%>
+                <div>
+                    No Existing Notes
+                </div>
+            <%} %>
+
             <% data.forEach(element => {%>
 
                 <div class="card">
