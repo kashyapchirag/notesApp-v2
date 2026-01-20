@@ -31,11 +31,26 @@
             <% data.forEach(element => {%>
 
                 <div class="card">
+                    <div class="clicks">
+                        <div class="edit">
+                            <a href="/note/edit/<%= element._id %>">
+                                <img src="/icons/edit.svg" alt="edit">
+                            </a>
+                        </div>
+                        <div class="delete">
+                            <form action="/note/delete/<%= element._id %>" method="post">
+                                <button class="deletes" type="submit">
+                                    <img src="/icons/delete.svg" alt="">
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
                     <div class="titlecard">
                         <%= element.title %>
                     </div>
                     <div class="descard">
-                        <a href="/<%= element.title %>">Read More...</a>
+                        <a href="/note/<%= element._id %>">Read More...</a>
                     </div>
 
                 </div>
