@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <form action="/create" method="post">
+            <div class="title">
+                <input name="title" class="inputText" type="text" placeholder="Title goes here...">
+
+            </div>
+            <div class="details">
+                <textarea class="inputDetails" name="details" id="details" placeholder="Write your task details here"></textarea>
+
+            </div>
+    
+            <div class="button">
+                <button class="submit" type="submit">Create Task</button>
+
+            </div>
+    
+        </form>
+
+        <div class="cards">
+
+            <% data.forEach(element => {%>
+
+                <div class="card">
+                    <div class="titlecard">
+                        <%= element.title %>
+                    </div>
+                    <div class="descard">
+                        <a href="/<%= element.title %>">Read More...</a>
+                    </div>
+
+                </div>
+                
+
+            <%}); %>
+
+
+
+        </div>
+
+    </div>
+
+    
+
+    
+</body>
+</html>
